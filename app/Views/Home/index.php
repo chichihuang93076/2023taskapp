@@ -4,6 +4,8 @@
 
 <?= $this->section('content') ?>
 
-  <h1>Welcome 1</h1>
+  <h1>Welcome</h1>
+
+  <a href="/signup/new">Sign up</a>
 
 <?= $this->endSection() ?>  
