@@ -16,7 +16,9 @@ class Tasks extends BaseController
 
   public function index()
     {
-        $data = $this->model->findAll();        
+
+      
+      $data = $this->model->findAll();
         /*
         $data = [
           ['id' => 1, 'description' => 'First task'],
