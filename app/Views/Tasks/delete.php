@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/default') ?>
 
-<?= $this->section('title') ?>Tasks<?= $this->endSection() ?>
+<?= $this->section('title') ?>Delete Task<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 

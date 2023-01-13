@@ -18,21 +18,21 @@ class Tasks extends BaseController
   }
 
   public function index()
-    {
-      $data = $this->model->paginateTasksByUserId($this->current_user->id);
-        /*
-        $data = [
-          ['id' => 1, 'description' => 'First task'],
-          ['id' => 2, 'description' => 'Second task']
-        ];
-        */        
-        //var_dump($data);
-        //exit;
-        return view("Tasks/index", [
-          'tasks' => $data,
-          'pager'  => $this->model->pager
-        ]);
-    }
+  {
+    $data = $this->model->paginateTasksByUserId($this->current_user->id);
+      /*
+      $data = [
+        ['id' => 1, 'description' => 'First task'],
+        ['id' => 2, 'description' => 'Second task']
+      ];
+      */        
+      //var_dump($data);
+      //exit;
+      return view("Tasks/index", [
+        'tasks' => $data,
+        'pager'  => $this->model->pager
+      ]);
+  }
 
     public function show($id)
     {

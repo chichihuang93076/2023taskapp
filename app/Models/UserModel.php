@@ -32,6 +32,8 @@ class UserModel extends Model
 
   protected $beforeInsert = ['hashPassword'];
 
+  protected $beforeUpdate = ['hashPassword'];
+
   protected function hashPassword(array $data)
   {
       if (! isset($data['data']['password'])) {
@@ -49,4 +51,11 @@ class UserModel extends Model
     return $this->where('email', $email)
                 ->first();
   }
+
+  public function disablePasswordValidation()
+  {
+    unset($this->validationRules['password']);
+    unset($this->validationRules['password_confirmation']);
+  }
+
 }
