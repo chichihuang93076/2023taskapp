@@ -7,7 +7,7 @@ class TaskModel extends Model
 {
   protected $table = 'task';
 
-  protected $allowedFields = ['description'];
+  protected $allowedFields = ['description','user_id'];
 
   protected $returnType = 'App\Entities\Task';
 
@@ -21,6 +21,27 @@ class TaskModel extends Model
     'description' => [
         'required' => 'Please enter a description.',
     ],
-];
+  ];
 
+  public function getTasksByUserId($id)
+  {
+    return $this->where('user_id', $id)
+                ->orderby('created_at','DESC')
+                ->findAll();
+  }
+
+  public function paginateTasksByUserId($id)
+  {
+    return $this->where('user_id', $id)
+                ->orderby('created_at','DESC')
+                ->paginate(5);
+  }
+
+  public function getTaskByUserId($id, $user_id)
+  {
+    return $this->where('id', $id)
+                ->where('user_id', $user_id)
+                ->first();
+  }
 }
+
