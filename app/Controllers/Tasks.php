@@ -26,7 +26,7 @@ class Tasks extends BaseController
         ['id' => 2, 'description' => 'Second task']
       ];
       */        
-      //var_dump($data);
+      var_dump($data);
       //exit;
       return view("Tasks/index", [
         'tasks' => $data,

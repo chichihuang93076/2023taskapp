@@ -79,6 +79,10 @@ class Filters extends BaseConfig
         'admin' => [
             'before' => [
                 'admin/*'
+        ]],
+        'guest' => [
+            'before' => [
+                'password/*'
             ]
         ]
     ];
