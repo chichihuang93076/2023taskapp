@@ -75,7 +75,8 @@ class Filters extends BaseConfig
         'login' => ['before' => [
             'tasks(/*)?',
             'admin/*',
-            'profile/*'
+            'profile/*',
+            'profileimage/*'
         ]],
         'admin' => [
             'before' => [
